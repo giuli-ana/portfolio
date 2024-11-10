@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <span><a href="index.html">inicio</a></span>
+            <span><a href="sobre_mi.html"> sobre mi</a></span>
+            <span><a href="proyectos.html"> proyectos</a></span>
+            <span><a href="experiencia.html">experiencia</a></span>
+            <span><a href="contacto.html" class="active"> contacto</a></span>
+        </nav>
+    
+    <div class="container-formulario">
+
+        <div class="title-box">
+            <h2 class="h2-box">Contacto</h2>
+        </div>
+        <form id="contactForm">
+        <!-- Nombre -->
+            <label for="nombre">Nombre:</label>
+            <input class="formulario-espacios" type="text" id="nombre" name="nombre" required minlength="3" placeholder="Tu nombre">
+
+        <!-- Email -->
+            <label for="email">Email:</label>
+            <input class="formulario-espacios" type="email" id="email" name="email" required placeholder="Tu email">
+
+        <!-- Motivo de Contacto -->
+            <label for="motivo">Motivo de Contacto:</label>
+            <select id="motivo" name="motivo" required class="formulario-espacios">
+                <option value="">Selecciona una opción</option>
+                <option value="consulta">Consulta</option>
+                <option value="propuesta">Propuesta de Proyecto</option>
+                <option value="presupuesto">Presupuesto</option>
+                <option value="otros">Otros</option>
+            </select>
+
+        <!-- Mensaje -->
+            <label for="mensaje">Mensaje:</label>
+            <textarea class="formulario-espacios-mensaje" id="mensaje" name="mensaje" required minlength="10" placeholder="Escribe tu mensaje"></textarea>
+
+        <!-- Botón de Enviar -->
+            <button class="buttonkitty" type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+           
+            if (this.checkValidity()) {
+                
+                Swal.fire({
+                    title: '¡Formulario enviado!',
+                    text: 'Gracias por contactarme! Te responderé pronto.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                }).then(() => {
+                    
+                    this.reset();
+                });
+            } else {
+                
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Por favor, completa todos los campos correctamente.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        });
+    </script>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Secciones</h3>
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/sobre_mi.html">Sobre mí</a></li>
+                <li><a href="/proyectos.html">Proyectos</a></li>
+                <li><a href="/experiencia.html">Experiencia</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        
+        <div class="footer-section">
+            <h3>Información Personal</h3>
+            <ul>
+                <li>Giuliana Lucero</li>
+                <li>giuliana.lucero038@gmail.com</li>
+                <li>(11) 2712 3127</li>
+                <li>Buenos Aires, Argentina</li>
+            </ul>
+        </div>
+
+        
+        <div class="footer-section">
+            <img src="/images/uade.png" alt="Logo" class="footer-logo">
+            <h3>Materia</h3>
+            <ul>
+                <li>Desarrollo Web</li>
+                <li>Profesora: Litovicius, Patricia</li>
+                <li>Año 2024</li>
+                <li>Grupo 14</li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+
+</body>
+</html>
